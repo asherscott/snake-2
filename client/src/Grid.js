@@ -11,10 +11,14 @@ function Grid() {
 
     return cells;
   }
+
   return (
-    <div className="grid-wrapper">
-      <div className="grid">{renderGrid(10)}</div>
-    </div>
+    <section className="grid-wrapper">
+      <div className="grid">
+        {renderGrid(15)}
+        <div className="snake-head cell"></div>
+      </div>
+    </section>
   );
 }
 

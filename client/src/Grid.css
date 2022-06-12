@@ -1,6 +1,6 @@
 :root {
   --cell-size: 5vw;
-  --grid-size: 10;
+  --grid-size: 15;
   --grid-min-width: 250px;
   --grid-max-width: 500px;
 }
@@ -11,24 +11,41 @@
 }
 
 .grid {
+  position: relative;
+
   display: flex;
   flex-flow: wrap;
 
   width: calc(var(--cell-size) * var(--grid-size));
 
-  min-width: var(--grid-min-width);
-  max-width: var(--grid-max-width);
+  /* min-width: var(--grid-min-width);
+  max-width: var(--grid-max-width); */
 }
 
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
 
-  min-width: calc(var(--grid-min-width) / var(--grid-size));
+  /* min-width: calc(var(--grid-min-width) / var(--grid-size));
   min-height: calc(var(--grid-min-width) / var(--grid-size));
 
   max-width: calc(var(--grid-max-width) / var(--grid-size));
-  max-height: calc(var(--grid-max-width) / var(--grid-size));
+  max-height: calc(var(--grid-max-width) / var(--grid-size)); */
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
+
+  background-color: gray;
+}
+
+.cell:nth-child(2n) {
+  background-color: lightgray;
+}
+
+.grid-wrapper .snake-head {
+  position: absolute;
+
+  background-color: red;
+
+  left: var(--cell-size);
+  top: calc(var(--cell-size) * 7);
 }
