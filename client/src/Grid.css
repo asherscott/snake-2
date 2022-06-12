@@ -1,0 +1,34 @@
+:root {
+  --cell-size: 5vw;
+  --grid-size: 10;
+  --grid-min-width: 250px;
+  --grid-max-width: 500px;
+}
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  flex-flow: wrap;
+
+  width: calc(var(--cell-size) * var(--grid-size));
+
+  min-width: var(--grid-min-width);
+  max-width: var(--grid-max-width);
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+
+  min-width: calc(var(--grid-min-width) / var(--grid-size));
+  min-height: calc(var(--grid-min-width) / var(--grid-size));
+
+  max-width: calc(var(--grid-max-width) / var(--grid-size));
+  max-height: calc(var(--grid-max-width) / var(--grid-size));
+
+  border: 1px solid black;
+}
