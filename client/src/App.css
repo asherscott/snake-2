@@ -3,14 +3,10 @@
 }
 
 :root {
-  --grid-min-width: 250px;
   --grid-width: 45vw;
+  --grid-min-width: 250px;
   --grid-max-width: 500px;
 }
-
-/* ---------------------------
-Stuff
---------------------------- */
 
 .snake-container {
   display: flex;

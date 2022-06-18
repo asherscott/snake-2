@@ -1,24 +1,20 @@
 import "./Grid.css";
 
 function Grid() {
-  function renderGrid(size) {
-    let cells = [];
-    for (let i = 0; i < size; i++) {
-      for (let n = 0; n < size; n++) {
-        cells.push(<div className="cell" key={i}></div>);
-      }
-    }
+  const HEIGHT = 10;
+  const WIDTH = 10;
 
-    return cells;
-  }
+  const emptyRows = () =>
+    [...Array(WIDTH)].map((_) => [...Array(HEIGHT)].map((_) => "grid-item"));
+
+  const displayRows = emptyRows.map((row, i) =>
+    row.map((value, j) => <div name={`${i}=${j}`} className={value} />)
+  );
 
   return (
-    <section className="grid-wrapper">
-      <div className="grid">
-        {renderGrid(15)}
-        <div className="snake-head cell"></div>
-      </div>
-    </section>
+    <div className="snake-container">
+      <div className="grid">{displayRows}</div>
+    </div>
   );
 }
 
